@@ -4,9 +4,9 @@ import { Button, Checkbox, Label, TextInput, Textarea, FileInput } from 'flowbit
 const MovieForm = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <form className="flex-col gap-4 max-w-lg">
+      <form className="flex-col gap-4 w-full">
         <div>
-          <div className="mb-2 block">
+          <div className="mb-2 mt-5 block">
             <Label htmlFor="title" value="Movie title" />
           </div>
           <TextInput
@@ -17,7 +17,7 @@ const MovieForm = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="mb-2 mt-5 block">
             <Label htmlFor="director" value="Movie director" />
           </div>
           <TextInput id="director" type="text" required />
@@ -25,7 +25,7 @@ const MovieForm = () => {
         <div>
           <label
             htmlFor="rating"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select the rating
           </label>
@@ -43,7 +43,7 @@ const MovieForm = () => {
         <div>
           <label
             htmlFor="genre"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select the genre
           </label>
@@ -60,7 +60,7 @@ const MovieForm = () => {
         </div>
 
         <div className="max-w-md">
-          <div className="mb-2 block">
+          <div className="mb-2 mt-5 block">
             <Label htmlFor="description" value="Movie description" />
           </div>
           <Textarea
@@ -71,7 +71,7 @@ const MovieForm = () => {
           />
         </div>
         <div id="posterUpload" className="max-w-md">
-          <div className="mb-2 block">
+          <div className="mb-2 mt-5 block">
             <Label htmlFor="poster" value="Upload poster" />
           </div>
           <TextInput
@@ -82,7 +82,7 @@ const MovieForm = () => {
           />
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="mb-2 mt-5 block">
             <Label htmlFor="trailer" value="Movie trailer" />
           </div>
           <TextInput
@@ -92,7 +92,9 @@ const MovieForm = () => {
             required
           />
         </div>
-        <Button type="submit">Add movie</Button>
+        <Button className="mt-5" type="submit">
+          Add movie
+        </Button>
       </form>
     </div>
   );
