@@ -6,7 +6,7 @@ const MovieCards = () => {
 	  const [movies, setMovies] = useState([]);
     useEffect(() => {
       axios
-        .get("${import.meta.env.VITE_SERVER_BASE_URL}/api/movies")
+        .get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`)
         .then((res) => console.log(res.data))
         .catch((error) => console.log(error)); 
     }, [])
