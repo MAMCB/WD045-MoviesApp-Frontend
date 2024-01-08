@@ -3,18 +3,18 @@ import axios from "axios";
 import { Card, Button } from "flowbite-react";
 
 const MovieCards = () => {
-	/*     const [movies, setMovies] = useState([]);
+	  const [movies, setMovies] = useState([]);
     useEffect(() => {
       axios
-      .get('${import.meta.env.ELEPHANT_SQL_CONNECTION_STRING}/api/movie')
-      .then(res => setMovies(res.data))
-      .catch(error => console.log(error)) 
+        .get("${import.meta.env.VITE_SERVER_BASE_URL}/api/movies")
+        .then((res) => console.log(res.data))
+        .catch((error) => console.log(error)); 
     }, [])
 
- */
+ 
 	return (
 		<div>
-			{/* {movies.map(movie =>
+			{movies.length>0?movies.map(movie =>
     
     <Card key={movie.id}
       className="max-w-sm"
@@ -28,7 +28,7 @@ const MovieCards = () => {
         
       </p>
       <Button type="submit" >Description</Button>
-    </Card>  )} */}
+    </Card>  ):<p>Loading...</p>}
 		</div>
 	);
 };
