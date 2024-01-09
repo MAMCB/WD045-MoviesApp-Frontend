@@ -7,7 +7,7 @@ const MovieForm = () => {
   const[movieUpload,setMovieUpload]=useState(false);
   const [newMovie, setNewMovie] = useState(null);
   useEffect(() => {newMovie&&
-   axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`,[newMovie]).then(setMovieUpload(true)).catch(e=>console.log(e));
+   axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`,newMovie).then(setMovieUpload(true)).catch(e=>console.log(e));
   }, [newMovie])
   
   const movieObject ={
@@ -29,11 +29,11 @@ const MovieForm = () => {
   }
 
   const handleYear = (e)=>{
-    movieObject.year =e.target.value;
+    movieObject.year =parseInt(e.target.value);
     }
 
   const handleRating = (e)=>{
-  movieObject.rating = e.target.value;
+  movieObject.rating = parseInt(e.target.value);
   
   }
 
