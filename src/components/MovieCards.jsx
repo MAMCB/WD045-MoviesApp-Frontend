@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button } from "flowbite-react";
+import { Link,Navigate } from "react-router-dom";
 
 const MovieCards = () => {
 	  const [movies, setMovies] = useState([]);
@@ -11,7 +12,6 @@ const MovieCards = () => {
         .catch((error) => console.log(error)); 
     }, [])
 
- 
 	return (
     <div className="grid grid-cols-4 gap-8 mt-6">
       {movies.length > 0 ? (
@@ -25,11 +25,11 @@ const MovieCards = () => {
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {movie.title}
             </h5>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+           
+            <p className="font-normal text-gray-700 dark:text-gray-400">
               {movie.director + " " + movie.year}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400"></p>
-            <Button type="submit">Description</Button>
+            </p>
+            <Link to={`/movies/${movie.id}`}>Description</Link>
           </Card>
         ))
       ) : (
