@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Card, Button, Table, Label, TextInput } from "flowbite-react";
 import { useParams} from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null)
   const [trailer, setTrailer] = useState(null)
   const {id} = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`).then(res=>setMovie(res.data)).catch(e=>console.log(e));
     
@@ -15,6 +17,10 @@ const MovieDetails = () => {
   
 const updateVideo = ()=>{
   axios.put(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`,trailer).then(res=>window.location.reload()).catch(e=>console.log(e));
+}
+
+const handleDelete = ()=>{
+  axios.delete(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies/${id}`).then(res=>navigate("/")).catch(e=>console.log(e));
 }
 
  const handleTrailer = (e) => {
@@ -79,7 +85,8 @@ const updateVideo = ()=>{
               required
             />
           </div>
-          <button onClick={updateVideo}>Update</button>
+          <Button onClick={updateVideo}>Update trailer</Button>
+          <Button onClick={handleDelete}>Delete movie</Button>
         </>
       ) : (
         <p>Loading</p>

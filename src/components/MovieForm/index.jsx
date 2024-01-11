@@ -66,7 +66,10 @@ const MovieForm = () => {
   }
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <form className="flex-col gap-4 w-full" onSubmit={handleSubmit}>
+      <form
+        className="grid grid-cols-1 gap-4 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 px-4"
+        onSubmit={handleSubmit}
+      >
         <div>
           <div className="mb-2 mt-5 block">
             <Label htmlFor="title" value="Movie title" />
@@ -94,12 +97,7 @@ const MovieForm = () => {
           <div className="mb-2 mt-5 block">
             <Label htmlFor="year" value="year" />
           </div>
-          <TextInput
-            id="year"
-            type="number"
-            required
-            onChange={handleYear}
-          />
+          <TextInput id="year" type="number" required onChange={handleYear} />
         </div>
         <div>
           <label

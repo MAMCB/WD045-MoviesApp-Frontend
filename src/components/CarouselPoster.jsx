@@ -9,7 +9,7 @@ import Departed from "../assets/departed1.jpg";
 function CarouselPoster() {
 	return (
 		
-		<div className="mb-14 mt-5 h-56 sm:h-64 xl:h-80 2xl:h-96">
+		<div className="mb-14 mt-5 h-56 sm:h-64 xl:h-80 2xl:h-96 hidden md:block">
 			<Carousel>
 				<img className="object-cover w-full h-full" src={FindingNemo} alt="findingnemo-poster" />
 				<img className="object-cover w-full h-full" src={HarryPotter} alt="harrypotter-poster" />

@@ -12,7 +12,7 @@ const Header = () => {
 
 
 	return (
-    <Navbar fluid rounded>
+    <Navbar fluid rounded className="pt-8">
       <Navbar.Brand
         href="https://flowbite-react.com"
         className="dark:text-gray-400"
