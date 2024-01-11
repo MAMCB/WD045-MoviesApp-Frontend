@@ -50,7 +50,12 @@ const MovieForm = () => {
   }
 
   const handleTrailer = (e)=>{
-    movieObject.trailer=e.target.value;
+    
+    const url = e.target.value;
+    const urlArray = url.split("/");
+    const id = urlArray[urlArray.length-1];
+    console.log(id);
+    movieObject.trailer=id;
   }
 
   const handleSubmit = (e)=>{
@@ -182,7 +187,7 @@ const MovieForm = () => {
           <TextInput
             id="trailer"
             type="text"
-            placeholder="Add movie trailer URL here"
+            placeholder="Add movie trailer video-URL from youtube here"
             onChange={handleTrailer}
             required
           />
