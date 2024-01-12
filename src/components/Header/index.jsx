@@ -14,24 +14,17 @@ const Header = () => {
 	return (
     <Navbar fluid rounded className="pt-8">
       <Navbar.Brand
-        href="https://flowbite-react.com"
+        href="https://github.com/MAMCB/WD045-MoviesApp-Frontend"
         className="dark:text-gray-400"
       >
-        <img
-          src="/favicon.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Flowbite React Logo"
-        />
+        <h2 className="font-bold text-2xl ml-2">Movies App</h2>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="dark:text-gray-400">
-        <NavLink to="/" >
-          Home
-        </NavLink>
-        <NavLink to="/">About</NavLink>
+        <NavLink to="/">Home</NavLink>
+
         <NavLink to="/movies/new">Add a Movie</NavLink>
-        <NavLink to="#">Pricing</NavLink>
-        <NavLink to="#">Contact</NavLink>
+
         <DarkModeToggle
           onChange={setIsDarkMode}
           checked={isDarkMode}

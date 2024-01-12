@@ -2,12 +2,18 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { Button, Checkbox, Label, TextInput, Textarea, FileInput } from 'flowbite-react';
+import {useNavigate} from 'react-router-dom';
 
 const MovieForm = () => {
   const[movieUpload,setMovieUpload]=useState(false);
   const [newMovie, setNewMovie] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {newMovie&&
-   axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`,newMovie).then(setMovieUpload(true)).catch(e=>console.log(e));
+   axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/movies`,newMovie).then(()=>{
+    setMovieUpload(true);
+    navigate("/");
+
+  }).catch(e=>console.log(e));
   }, [newMovie])
   
   const movieObject ={
@@ -151,6 +157,8 @@ const MovieForm = () => {
             <option value={"Mystery"}>Mystery</option>
             <option value={"Western"}>Western</option>
             <option value={"Thriller"}>Thriller</option>
+            <option value={"Fantasy"}>Fantasy</option>
+            <option value={"Adventure"}>Adventure</option>
           </select>
         </div>
 
@@ -194,7 +202,6 @@ const MovieForm = () => {
           Add movie
         </Button>
       </form>
-      {movieUpload && <h2>Movie {newMovie.title} uploaded successfully</h2>}
     </div>
   );
 }
