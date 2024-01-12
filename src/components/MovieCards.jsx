@@ -43,6 +43,7 @@ const MovieCards = ({ movieToDisplay }) => {
           <Card
             key={movieToDisplay.id}
             className="max-w-sm mt-9 duration-300 hover:-translate-y-1"
+            
             imgAlt={movieToDisplay.title}
             imgSrc={movieToDisplay.poster}
           >
@@ -55,7 +56,7 @@ const MovieCards = ({ movieToDisplay }) => {
             </p>
             <Link
               to={`/movies/${movieToDisplay.id}`}
-              className="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none"
+              className="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none my-auto mb-4"
             >
               Description
             </Link>
@@ -65,6 +66,7 @@ const MovieCards = ({ movieToDisplay }) => {
             <Card
               key={movie.id}
               className="max-w-sm mt-9 duration-300 hover:-translate-y-1"
+              
               imgAlt={movie.title}
               imgSrc={movie.poster}
             >
@@ -77,7 +79,7 @@ const MovieCards = ({ movieToDisplay }) => {
               </p>
               <Link
                 to={`/movies/${movie.id}`}
-                className="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none"
+                className="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-600 rounded shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none my-auto mb-4"
               >
                 Description
               </Link>
