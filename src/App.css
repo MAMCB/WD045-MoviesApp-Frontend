@@ -3,5 +3,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* iframe{
+    width:1236px;
+    height:695px;
+} */
 
+@media screen and (max-width: 1840px) {
+    iframe {
+        width: 854px;
+        height: 480px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    iframe {
+        width: 640px;
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    iframe {
+        width: 426px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .hover-md:translate {
+      transition-duration: 300ms; 
+    }
+    .hover-md:translate:hover {
+      transform: translateY(-0.25rem); 
+    }
+  }
 

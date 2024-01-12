@@ -133,7 +133,7 @@ const handleDelete = ()=>{
     <>
       {movie ? (
         <>
-          <div className="grid grid-cols-4 gap-8 mt-6">
+          <div className="grid md:grid-cols-4 gap-8 mt-6 block">
             <Card
               className="max-w-sm"
               imgAlt={movie.title}
@@ -155,7 +155,7 @@ const handleDelete = ()=>{
               allowfullscreen
             ></iframe>
           </div>
-          <div className="grid grid-cols-4 gap-8 mt-6">
+          <div className="grid lg:grid-cols-4 gap-8 w-6/12 mt-6 md:block">
             <Table>
               <Table.Head>
                 <Table.HeadCell>Rating</Table.HeadCell>
@@ -168,15 +168,17 @@ const handleDelete = ()=>{
                 </Table.Row>
               </Table.Body>
             </Table>
-            <p>{movie.description}</p>
+            <p className="dark:text-gray-400 p-4">{movie.description}</p>
+          </div>
+          <div className='flex gap-4'>
+            <Button className="mt-5" onClick={handleDelete}>
+              Delete movie
+            </Button>
+            <Button className="mt-5" onClick={toggleUpdateForm}>
+              {updateForm ? "Close" : "Update Fields"}
+            </Button>
           </div>
 
-          <Button className="mt-5" onClick={handleDelete}>
-            Delete movie
-          </Button>
-          <Button className="mt-5" onClick={toggleUpdateForm}>
-            {updateForm ? "Close" : "Update Fields"}
-          </Button>
           {updateForm && (
             <div className="grid grid-cols-1 gap-4 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 px-4">
               <div>
